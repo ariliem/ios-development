@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAV-01-CTL">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SCN-NAV-001">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NAV-01-CTL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NAB-01-BAR">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SEG-ROOT-01"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIR-NAV-01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="0.0"/>
+        </scene>
+        <!--BTS Playlist-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BTSFavoritesNavigator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TBL-01-VW">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="76" id="CEL-01-PR" customClass="FavoriteCell" customModule="BTSFavoritesNavigator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CEL-01-PR" id="CNT-01-VW">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="76"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-01-CL">
+                                                    <rect key="frame" x="16" y="10" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="56" id="CNS-CL-W"/>
+                                                        <constraint firstAttribute="height" constant="56" id="CNS-CL-H"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-01-CL">
+                                                    <rect key="frame" x="88" y="27.666666666666668" width="258.66666666666669" height="20.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IMG-01-CL" firstAttribute="leading" secondItem="CNT-01-VW" secondAttribute="leading" constant="16" id="CNS-IMG-L"/>
+                                                <constraint firstItem="IMG-01-CL" firstAttribute="top" secondItem="CNT-01-VW" secondAttribute="top" constant="10" id="CNS-IMG-T"/>
+                                                <constraint firstAttribute="bottom" secondItem="IMG-01-CL" secondAttribute="bottom" priority="999" constant="10" id="CNS-IMG-B"/>
+                                                <constraint firstItem="LBL-01-CL" firstAttribute="leading" secondItem="IMG-01-CL" secondAttribute="trailing" constant="16" id="CNS-LBL-L"/>
+                                                <constraint firstAttribute="trailing" secondItem="LBL-01-CL" secondAttribute="trailing" constant="16" id="CNS-LBL-R"/>
+                                                <constraint firstItem="LBL-01-CL" firstAttribute="centerY" secondItem="CNT-01-VW" secondAttribute="centerY" id="CNS-LBL-Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemImageView" destination="IMG-01-CL" id="OUT-IMG-CL"/>
+                                            <outlet property="titleLabel" destination="LBL-01-CL" id="OUT-LBL-CL"/>
+                                            <segue destination="DTL-01-VC" kind="show" identifier="showDetail" id="SEG-SHOW-01"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TBL-01-VW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CNS-TBL-T"/>
+                            <constraint firstItem="TBL-01-VW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CNS-TBL-L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBL-01-VW" secondAttribute="trailing" id="CNS-TBL-R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TBL-01-VW" secondAttribute="bottom" id="CNS-TBL-B"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BTS Playlist" id="NVI-01-LST"/>
+                    <connections>
+                        <outlet property="tableView" destination="TBL-01-VW" id="OUT-TBL-01"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="0.0"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="SCN-DTL-001">
+            <objects>
+                <viewController id="DTL-01-VC" customClass="DetailViewController" customModule="BTSFavoritesNavigator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VW-DTL-01">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="leading" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="STK-V-01">
+                                <rect key="frame" x="20" y="119" width="353" height="410"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-DTL-01">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="CNS-DIMG-H"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-DTIT-01">
+                                        <rect key="frame" x="0.0" y="252" width="110" height="28.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album · Year" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-DSUB-01">
+                                        <rect key="frame" x="0.0" y="292.66666666666669" width="92" height="19.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="STK-H-STR">
+                                        <rect key="frame" x="0.0" y="324" width="126" height="22"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="STR-01">
+                                                <rect key="frame" x="0.0" y="-0.33333333333333215" width="22" height="21.666666666666664"/>
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="STR-01-W"/>
+                                                    <constraint firstAttribute="height" constant="22" id="STR-01-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="STR-02">
+                                                <rect key="frame" x="26" y="-0.33333333333333215" width="22" height="21.666666666666664"/>
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="STR-02-W"/>
+                                                    <constraint firstAttribute="height" constant="22" id="STR-02-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="STR-03">
+                                                <rect key="frame" x="52" y="-0.33333333333333215" width="22" height="21.666666666666664"/>
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="STR-03-W"/>
+                                                    <constraint firstAttribute="height" constant="22" id="STR-03-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="STR-04">
+                                                <rect key="frame" x="78" y="-0.33333333333333215" width="22" height="21.666666666666664"/>
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="STR-04-W"/>
+                                                    <constraint firstAttribute="height" constant="22" id="STR-04-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="STR-05">
+                                                <rect key="frame" x="104" y="-0.33333333333333215" width="22" height="21.666666666666664"/>
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="STR-05-W"/>
+                                                    <constraint firstAttribute="height" constant="22" id="STR-05-H"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-DDSC-01">
+                                        <rect key="frame" x="0.0" y="358" width="353" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IMG-DTL-01" secondAttribute="trailing" id="CNS-STK-IMGR"/>
+                                    <constraint firstAttribute="trailing" secondItem="LBL-DDSC-01" secondAttribute="trailing" id="CNS-STK-DSCR"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SAF-DTL-01"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="STK-V-01" firstAttribute="top" secondItem="SAF-DTL-01" secondAttribute="top" constant="16" id="CNS-STKV-T"/>
+                            <constraint firstItem="STK-V-01" firstAttribute="leading" secondItem="SAF-DTL-01" secondAttribute="leading" constant="20" id="CNS-STKV-L"/>
+                            <constraint firstItem="SAF-DTL-01" firstAttribute="trailing" secondItem="STK-V-01" secondAttribute="trailing" constant="20" id="CNS-STKV-R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NVI-DTL-01"/>
+                    <connections>
+                        <outlet property="coverImageView" destination="IMG-DTL-01" id="OUT-DTL-IMG"/>
+                        <outlet property="descriptionLabel" destination="LBL-DDSC-01" id="OUT-DTL-DSC"/>
+                        <outlet property="subtitleLabel" destination="LBL-DSUB-01" id="OUT-DTL-SUB"/>
+                        <outlet property="titleLabel" destination="LBL-DTIT-01" id="OUT-DTL-TIT"/>
+                        <outletCollection property="starImageViews" destination="STR-01" collectionClass="NSMutableArray" id="COL-STR-01"/>
+                        <outletCollection property="starImageViews" destination="STR-02" collectionClass="NSMutableArray" id="COL-STR-02"/>
+                        <outletCollection property="starImageViews" destination="STR-03" collectionClass="NSMutableArray" id="COL-STR-03"/>
+                        <outletCollection property="starImageViews" destination="STR-04" collectionClass="NSMutableArray" id="COL-STR-04"/>
+                        <outletCollection property="starImageViews" destination="STR-05" collectionClass="NSMutableArray" id="COL-STR-05"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIR-DTL-01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1780" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
